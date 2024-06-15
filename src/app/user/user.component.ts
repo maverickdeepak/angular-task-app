@@ -7,12 +7,7 @@ import {
   Output,
   output,
 } from "@angular/core";
-
-type User = {
-  id: string;
-  avatar: string;
-  name: string;
-};
+import { type User } from "./user.modal";
 
 @Component({
   selector: "app-user",
@@ -28,6 +23,7 @@ export class UserComponent {
   // @Input({ required: true }) name!: string;
   @Input({ required: true }) user!: User;
   @Output() select = new EventEmitter<string>();
+  @Input({ required: true }) selected!: Boolean;
   // select = output<string>();
 
   // Signal Input

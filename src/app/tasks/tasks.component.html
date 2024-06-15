@@ -2,12 +2,17 @@
     <header>
         <h2>{{name}}'s Task</h2>
         <menu>
-            <button>Add Task</button>
+            <button (click)="showAddTaskForm()">Add Task</button>
         </menu>
     </header>
+    @if (addNewTask) {
+    <app-add-task (cancel)="hideAddTaskForm()" />
+    } @else {
     <ul>
         @for (task of selectedUserTask; track task.id) {
-        <app-task [task]="task" />
+        <app-task [task]="task" (complete)="onCompleteTask($event)" />
         }
     </ul>
+    }
+
 </section>
