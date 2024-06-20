@@ -1,6 +1,8 @@
 import { Component, Input } from "@angular/core";
+
 import { TaskComponent } from "./task/task.component";
 import { AddTaskComponent } from "./add-task/add-task.component";
+import { type TaskForm } from "./task/task.modal";
 
 interface User {
   id: string;
@@ -56,6 +58,17 @@ export class TasksComponent {
     this.addNewTask = true;
   }
   hideAddTaskForm() {
+    this.addNewTask = false;
+  }
+
+  addTask(taskData: TaskForm) {
+    this.tasks.push({
+      id: new Date().getTime().toString(),
+      userId: this.userId,
+      title: taskData.title,
+      summary: taskData.summary,
+      dueDate: taskData.dueDate,
+    });
     this.addNewTask = false;
   }
 }

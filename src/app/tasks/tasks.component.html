@@ -6,7 +6,7 @@
         </menu>
     </header>
     @if (addNewTask) {
-    <app-add-task (cancel)="hideAddTaskForm()" />
+    <app-add-task (cancel)="hideAddTaskForm()" (add)="addTask($event)" />
     } @else {
     <ul>
         @for (task of selectedUserTask; track task.id) {
