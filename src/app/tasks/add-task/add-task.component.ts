@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-
-import { type TaskForm } from "../task/task.modal";
 import { TasksService } from "../tasks.service";
 
 @Component({
