@@ -2,7 +2,6 @@ import { Component, Input } from "@angular/core";
 
 import { TaskComponent } from "./task/task.component";
 import { AddTaskComponent } from "./add-task/add-task.component";
-import { type TaskForm } from "./task/task.modal";
 import { TasksService } from "./tasks.service";
 
 interface User {
@@ -29,9 +28,6 @@ export class TasksComponent {
     return this.tasksService.getUserTaks(this.userId);
   }
 
-  onCompleteTask(id: string) {
-    return this.tasksService.removeTask(id);
-  }
   showAddTaskForm() {
     this.addNewTask = true;
   }
